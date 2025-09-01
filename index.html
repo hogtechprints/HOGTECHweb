@@ -142,6 +142,105 @@ nav ul li.home {
   margin-right: 100px;   /* bigger gap after "Home" */
 }
 
+  /* General mobile adjustments */
+body {
+  font-size: 16px;  /* base font size */
+}
+
+header, main, footer {
+  padding: 10px;
+}
+
+/* Make nav items wrap on smaller screens */
+nav ul {
+  flex-wrap: wrap;      /* nav items wrap instead of overflowing */
+  justify-content: center;
+}
+
+/* Hero section responsiveness */
+#hero {
+  flex-direction: column;      /* stack logo, title, button vertically */
+  text-align: center;
+  padding: 30px 10px;
+}
+
+#hero-left, #hero-center, #hero-right {
+  margin: 10px 0;              /* space between elements */
+}
+
+/* Swiper gallery adjustments */
+.swiper {
+  height: 200px;               /* smaller height on mobile */
+}
+
+/* Services section adjustments */
+#services ul {
+  padding-left: 15px;
+}
+
+/* Media query for small screens (mobile) */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;      /* stack nav items vertically */
+    gap: 10px;
+  }
+
+  nav ul li {
+    width: 120px;                /* smaller nav ovals */
+    height: 40px;
+  }
+
+  #hero {
+    flex-direction: column;      /* stack hero elements vertically */
+  }
+
+  #hero-left img {
+    width: 80px;                 /* smaller logo */
+  }
+
+  #hero-title {
+    font-size: 24px;             /* smaller hero text */
+  }
+
+  #hero-subtitle {
+    font-size: 16px;             /* smaller subtitle */
+  }
+
+  #hero-right button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #services h3 {
+    font-size: 18px;             /* smaller subheaders */
+  }
+
+  .price-table {
+    font-size: 14px;             /* smaller table text */
+  }
+}
+
+/* Media query for very small screens (mobile portrait) */
+@media screen and (max-width: 480px) {
+  nav ul li {
+    width: 100px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  #hero-title {
+    font-size: 20px;
+  }
+
+  #hero-subtitle {
+    font-size: 14px;
+  }
+
+  .swiper {
+    height: 150px;
+  }
+}
+
 </style>
 </head>
 <body>
