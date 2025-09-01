@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOG TECH Printing | Douala, Cameroon</title>
+<meta name="description" content="HOG TECH Printing – Professional printing services in Douala, Cameroon. Flyers, banners, business cards, T-shirts, and more delivered with quality.">
+
+<!-- Open Graph / Social Preview -->
+<meta property="og:title" content="HOG TECH Printing | Douala, Cameroon">
+<meta property="og:description" content="Flyers, banners, business cards, T-shirts, and more delivered with quality.">
+<meta property="og:image" content="https://yourdomain.com/images/preview.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<style>
+body {font-family: Arial, sans-serif; margin:0; padding:0; scroll-behavior: smooth; background-color:white;}
+header {background: blue; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items:center; position: fixed; top:0; width:100%; z-index:1000;}
+main {padding-top:80px;}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  background: white;
+  border-radius: 20px 50%; /* Makes it a circle */
+  width: 100px; /* Adjust circle size */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+nav {
+  flex: 1; /* nav takes remaining space */
+  display: flex;
+  justify-content: center; /* centers the nav horizontally */
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+#logo{
+  flex: 0;
+}
+
+nav ul li:hover {
+  background: yellowgreen; /* Highlight on hover */
+  transform: scale(1.1);
+}
+
+.lang-buttons {
+  display: flex;
+  gap: 5px; /* space between EN and FR buttons */
+}
+
+.lang {
+  width: 30px;   /* smaller square */
+  height: 30px;  /* smaller square */
+  border-radius: 5px; /* slight rounding for subtle square shape */
+  font-size: 12px;    /* smaller text to fit */
+  background: black;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+section h2 {
+  text-align: center;    /* centers all h2 headers in sections */
+  margin-bottom: 20px;   /* optional spacing below header */
+  font-weight: bold;     /* makes header bold */
+  color: #222;           /* default color, change if needed */
+  font-size: 28px;       /* adjust size as you like */
+}
+section h3{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+section h1{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color:black;
+  font-family:'Times New Roman', Times, serif;
+}
+#services h3, #services ul {
+  text-align: left;
+  margin-left: 0; /* optional, adjust spacing as needed */
+  margin-bottom: 10px;
+  color: #333;
+  font-size: px; /* adjust size for h3 */
+  font-weight: bold;
+}
+#hero-subtitle {
+  font-family: 'Pacifico', cursive;
+  font-style: italic;
+  text-align: right;
+  font-size:20px;
+}
+ul {margin-left:20px;}
+footer {background:#222; color:white; text-align:center; padding:15px;}
+#success-msg {display:none;color:green;font-weight:bold;text-align:center;margin-top:10px;}
+input, textarea {width:100%; padding:10px; margin-bottom:10px;}
+button {padding:10px 20px; background:#ffcc00; border:none; cursor:pointer; border-radius:5px;}
+.price-table {width:100%; border-collapse: collapse;}
+.price-table th, .price-table td {border:1px solid black; padding:10px; text-align:left;}
+.price-table th {background:greenyellow;}
+.swiper {width: 100%; height: 300px;}
+.swiper-slide img {width: 100%; height: 100%; object-fit: cover; border-radius:5px;}
+
+#contact-title {
+  font-size: 32px;      /* larger text */
+  font-weight: bold;    /* bold */
+  margin-bottom: 20px;  /* space below header */
+  color: whitesmoke;       /* optional highlight color */
+}
+
+nav ul li.home {
+  margin-right: 100px;   /* bigger gap after "Home" */
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div id="logo">
+    <img src="HOGTECHPRINTS IMAGES/hogtech logo.jpg" alt="HOG TECH Logo" width="60" height="60">
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+
+  <div class="lang-buttons">
+    <button class="lang" onclick="changeLang('EN')">EN</button>
+    <button class="lang" onclick="changeLang('FR')">FR</button>
+  </div>
+</header>
+<main>
+<section id="hero">
+<h1 id="hero-title">Welcome to HOG TECH Printing</h1>
+<p id="hero-subtitle">Where we print beyond impression</p>
+<button id="hero-btn">Get a Quote</button>
+</section>
+
+<section id="about">
+<h2 id="about-title">About Us</h2>
+<p id="about-text">We are a professional printing company providing high-quality prints for businesses and individuals. From flyers to banners, we deliver excellence.</p>
+</section>
+
+<section id="services">
+<h2 id="services-title">Our Services</h2>
+<h3 id="serv-cat1">Printing Services</h3>
+<ul id="serv-list1">
+<li>Business Cards</li>
+<li>Flyers & Leaflets</li>
+<li>Posters</li>
+<li>Brochures & Catalogues</li>
+<li>Books & Reports</li>
+</ul>
+<h3 id="serv-cat2">Large Format Printing</h3>
+<ul id="serv-list2">
+<li>Banners (vinyl, fabric, roll-up)</li>
+<li>Billboards & Signboards</li>
+<li>Wall Murals & Backdrops</li>
+<li>Vehicle Branding</li>
+<li>Stickers & Labels</li>
+</ul>
+<h3 id="serv-cat3">Promotional & Corporate Branding</h3>
+<ul id="serv-list3">
+<li>T-Shirts & Polo Shirts Printing</li>
+<li>Caps & Jackets</li>
+<li>Mugs, Bottles & Gift Items</li>
+<li>Bags & Packaging</li>
+<li>Pens, Keychains & Souvenirs</li>
+</ul>
+<h3 id="serv-cat4">Event & Marketing Materials</h3>
+<ul id="serv-list4">
+<li>Invitations & Programs</li>
+<li>Menus & Tickets</li>
+<li>Certificates & Plaques</li>
+</ul>
+<h3 id="serv-cat5">Other Services</h3>
+<ul id="serv-list5">
+<li>Graphic Design</li>
+<li>Scanning & Photocopying</li>
+<li>Binding & Lamination</li>
+<li>Delivery Services</li>
+</ul>
+</section>
+
+<section id="gallery">
+<h2 id="gallery-title">Gallery</h2>
+<div class="swiper mySwiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><img src="h1.jpg" alt="Flyers"></div>
+<div class="swiper-slide"><img src="h2.jpg" alt="Business Cards"></div>
+<div class="swiper-slide"><img src="h3.jpg" alt="Banners"></div>
+<div class="swiper-slide"><img src="h4.jpg" alt="Posters"></div>
+<div class="swiper-slide"><img src="h5.jpg" alt="T-Shirts"></div>
+<div class="swiper-slide"><img src="h6.jpg" alt="Mugs"></div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<h2 id="pricing-title">Pricing</h2>
+<table class="price-table">
+<tr><th id="price-header-service">Service</th><th id="price-header-price">Price</th></tr>
+<tr><td>Business Cards</td><td>50XFA for 50pcs</td></tr>
+<tr><td>Flyers</td><td>100XFA for 10pcs</td></tr>
+<tr><td>Banners</td><td>500XFA/sq.m</td></tr>
+<tr><td>T-Shirts Printing or T-Shirts+Printing</td><td>1500XFA or 3500XFA each</td></tr>
+<tr><td>Posters</td><td>1000XFA for 10pcs</td></tr>
+</table>
+</section>
+
+<section id="quote">
+<h2 id="quote-title">Get a Quote</h2>
+<p id="quote-text">Fill in the form below and we’ll get back with a price.</p>
+<form id="quote-form">
+<input type="text" name="from_name" placeholder="Your Name" required>
+<input type="email" name="from_email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Details of your request" rows="4"></textarea>
+<button type="submit">Submit</button>
+<p id="success-msg">Message sent successfully!</p>
+</form>
+</section>
+
+<section id="faq">
+<h2 id="faq-title">Frequently Asked Questions</h2>
+<div class="faq-item">
+<button id="faq-q1" onclick="toggleFAQ(this)">What printing services do you offer?</button>
+<p id="faq-a1">We offer flyers, banners, business cards, t-shirts, posters, and more.</p>
+</div>
+<div class="faq-item">
+<button id="faq-q2" onclick="toggleFAQ(this)">How long does printing usually take?</button>
+<p id="faq-a2">Typically 2-5 business days depending on the order size.</p>
+</div>
+<div class="faq-item">
+<button id="faq-q3" onclick="toggleFAQ(this)">Do you deliver?</button>
+<p id="faq-a3">Yes, we deliver locally and nationally.</p>
+</div>
+</section>
+
+<section id="contact" style="background-color:black; color:white; padding: 60px 20px; text-align: center;">
+<h2 id="contact-title">Contact Us</h2>
+<p><strong>📍 Address:</strong> Douala, Cameroon</p>
+<p><strong>📞 Phone:</strong> +237 675366777 / 670797914</p>
+<p><strong>✉ Email:</strong> hogtechprints@gmail.com</p>
+<p><strong>🕒 Working Hours:</strong> Monday - Sunday | 8:00 AM - 8:00 PM</p>
+</section>
+
+<footer>
+<p>&copy; 2025 HOG TECH Printing. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+emailjs.init("8bBU9muyjZaE159N3"); // replace with your EmailJS public key
+
+function toggleFAQ(btn){ 
+  const p = btn.nextElementSibling; 
+  p.style.display = p.style.display==="block"?"none":"block"; 
+}
+
+// Swiper gallery
+var swiper = new Swiper(".mySwiper", {
+slidesPerView: 3,
+spaceBetween: 15,
+loop: true,
+autoplay: { delay: 2000, disableOnInteraction: false },
+breakpoints: {320:{slidesPerView:1}, 640:{slidesPerView:2}, 1024:{slidesPerView:3}}
+});
+
+// Language translation
+const texts={
+EN:{nav:["Home","About","Services","Gallery","Pricing","FAQ","Contact"], hero:["Welcome to HOG TECH Printing","Where we print beyond impression"], button:"Get a Quote", about:["About Us","We are a professional printing company providing high-quality prints for businesses and individuals. From flyers to banners, we deliver excellence."], servicesTitle:"Our Services", services:{cat1:"Printing Services", list1:["Business Cards","Flyers & Leaflets","Posters","Brochures & Catalogues","Books & Reports"], cat2:"Large Format Printing", list2:["Banners (vinyl, fabric, roll-up)","Billboards & Signboards","Wall Murals & Backdrops","Vehicle Branding","Stickers & Labels"], cat3:"Promotional & Corporate Branding", list3:["T-Shirts & Polo Shirts Printing","Caps & Jackets","Mugs, Bottles & Gift Items","Bags & Packaging","Pens, Keychains & Souvenirs"], cat4:"Event & Marketing Materials", list4:["Invitations & Programs","Menus & Tickets","Certificates & Plaques"], cat5:"Other Services", list5:["Graphic Design","Scanning & Photocopying","Binding & Lamination","Delivery Services"]}, gallery:["Gallery"], pricing:["Pricing"], quote:["Get a Quote","Fill in the form below and we’ll get back with a price."], faq:["Frequently Asked Questions"], faqQ:["What printing services do you offer?","How long does printing usually take?","Do you deliver?"], faqA:["We offer flyers, banners, business cards, t-shirts, posters, and more.","Typically 2-5 business days depending on the order size.","Yes, we deliver locally and nationally."], contact:["Contact Us"], priceHeaders:["Service","Price"]},
+FR:{nav:["Accueil","À propos","Services","Galerie","Tarifs","FAQ","Contact"], hero:["Bienvenue chez HOG TECH Impression","Votre solution unique pour tous vos services d'impression"], button:"Demander un devis", about:["À propos de nous","Nous sommes une entreprise d'impression professionnelle fournissant des impressions de haute qualité pour les entreprises et les particuliers. Des flyers aux bannières, nous livrons l'excellence."], servicesTitle:"Nos Services", services:{cat1:"Services d'impression", list1:["Cartes de visite","Flyers & Prospectus","Affiches","Brochures & Catalogues","Livres & Rapports"], cat2:"Impression grand format", list2:["Bannières (vinyle, tissu, roll-up)","Panneaux d'affichage & Enseignes","Fresques murales & Arrières-plans","Marquage de véhicules","Autocollants & Étiquettes"], cat3:"Branding promotionnel & corporatif", list3:["Impression sur T-shirts & Polos","Casquettes & Vestes","Mugs, Bouteilles & Articles cadeaux","Sacs & Emballages","Stylos, Porte-clés & Souvenirs"], cat4:"Matériel d'événement & marketing", list4:["Invitations & Programmes","Menus & Billets","Certificats & Plaques"], cat5:"Autres services", list5:["Conception graphique","Numérisation & Photocopie","Reliure & Plastification","Services de livraison"]}, gallery:["Galerie"], pricing:["Tarifs"], quote:["Demander un devis","Remplissez le formulaire ci-dessous et nous vous répondrons avec le prix."], faq:["Questions Fréquemment Posées"], faqQ:["Quels services d'impression proposez-vous ?","Combien de temps l'impression prend-elle généralement ?","Livrez-vous ?"], faqA:["Nous proposons des flyers, des bannières, des cartes de visite, des t-shirts, des affiches, et plus encore.","En général, 2 à 5 jours ouvrables selon la taille de la commande.","Oui, nous livrons localement et à l’échelle nationale."], contact:["Contactez-nous"], priceHeaders:["Service","Prix"]}
+};
+
+function changeLang(lang){
+document.querySelectorAll("nav ul li a").forEach((el,i)=>el.innerText=texts[lang].nav[i]);
+document.getElementById("hero-title").innerText=texts[lang].hero[0];
+document.getElementById("hero-subtitle").innerText=texts[lang].hero[1];
+document.getElementById("hero-btn").innerText=texts[lang].button;
+document.getElementById("about-title").innerText=texts[lang].about[0];
+document.getElementById("about-text").innerText=texts[lang].about[1];
+document.getElementById("services-title").innerText=texts[lang].servicesTitle;
+for(let i=1;i<=5;i++){
+document.getElementById(`serv-cat${i}`).innerText=texts[lang].services[`cat${i}`];
+document.getElementById(`serv-list${i}`).innerHTML=texts[lang].services[`list${i}`].map(x=>`<li>${x}</li>`).join("");
+}
+document.getElementById("gallery-title").innerText=texts[lang].gallery[0];
+document.getElementById("pricing-title").innerText=texts[lang].pricing[0];
+document.getElementById("price-header-service").innerText=texts[lang].priceHeaders[0];
+document.getElementById("price-header-price").innerText=texts[lang].priceHeaders[1];
+document.getElementById("quote-title").innerText=texts[lang].quote[0];
+document.getElementById("quote-text").innerText=texts[lang].quote[1];
+document.getElementById("faq-title").innerText=texts[lang].faq[0];
+for(let j=1;j<=3;j++){
+document.getElementById(`faq-q${j}`).innerText=texts[lang].faqQ[j-1];
+document.getElementById(`faq-a${j}`).innerText=texts[lang].faqA[j-1];
+}
+document.getElementById("contact-title").innerText=texts[lang].contact[0];
+}
+
+// Quote form submission with visitor info
+document.getElementById("quote-form").addEventListener("submit", function(e){
+e.preventDefault();
+emailjs.sendForm('service_4g2r4il','template_10hc8w2',this)
+.then(()=>{ 
+const msg=document.getElementById("success-msg"); 
+msg.style.display="block"; 
+setTimeout(()=>{msg.style.display="none";},3000); 
+this.reset();
+},()=>{alert("Failed to send message. Please try again later.");});
+});
+
+</script>
+</body>
+</html>
