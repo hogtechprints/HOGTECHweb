@@ -16,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <style>
-body {font-family: Arial, sans-serif; margin:0; padding:0; scroll-behavior: smooth; background-color:white;}
+body {font-family: Arial, sans-serif; margin:0; padding:0; scroll-behavior: smooth; background-image: url(backgroung image 2.jpg); }
 header {background: blue; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items:center; position: fixed; top:0; width:100%; z-index:1000;}
 main {padding-top:80px;}
 nav ul {
@@ -79,12 +79,20 @@ nav ul li:hover {
 }
 
 section h2 {
-  text-align: center;    /* centers all h2 headers in sections */
-  margin-bottom: 20px;   /* optional spacing below header */
-  font-weight: bold;     /* makes header bold */
-  color: #222;           /* default color, change if needed */
-  font-size: 28px;       /* adjust size as you like */
+  display: inline-block;       /* rectangle wraps tightly around text */
+  text-align: center;          /* center text inside rectangle */
+  margin-left: auto;           /* center rectangle horizontally */
+  margin-right: auto;
+  margin-bottom: 20px;         /* spacing below header */
+  font-weight: bold;
+  font-size: 28px;             /* adjust as needed */
+  color: white;                /* text color */
+  background-color: #222;      /* rectangle color */
+  padding: 10px 20px;          /* space around text */
+  border-radius: 8px;          /* slightly rounded corners */
+  width: auto;                 /* ensure rectangle doesn’t stretch */
 }
+
 section h3{
   text-align: center;
   margin-bottom: 10px;
