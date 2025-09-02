@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOG TECH Printing | Douala, Cameroon</title>
+<meta name="description" content="HOG TECH Printing – Professional printing services in Douala, Cameroon. Flyers, banners, business cards, T-shirts, and more delivered with quality.">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin:0; padding:0; scroll-behavior: smooth; 
+  background-color: #f9f9f9;
+  color:#333;
+}
+
+/* HEADER */
+header {
+  background-color: #00b4d8; 
+  color: white; 
+  padding: 10px 20px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items:center; 
+  position: fixed; 
+  top:0; width:100%; 
+  z-index:1000;
+}
+
+#logo img {
+  width:100px; height:100px;
+}
+
+/* MOBILE HAMBURGER */
+#mobile-menu-btn {
+  display:none;
+  font-size:28px;
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* NAVIGATION */
+nav {
+  flex:1; 
+  display:flex; 
+  justify-content:center;
+}
+nav ul {
+  list-style:none; 
+  display:flex; gap:15px; 
+  margin:0; padding:0; 
+  flex-wrap: wrap;
+}
+nav ul li {
+  background:white; 
+  border-radius:50%; 
+  width:100px; 
+  height:40px; 
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  transition: transform 0.2s, background-color 0.2s;
+}
+nav ul li a {
+  text-decoration:none; 
+  font-weight:bold; 
+  color:black;
+  text-align:center;
+}
+nav ul li:hover {
+  background-color: #00b4d8; 
+  color:white;
+  transform:scale(1.1);
+}
+
+.lang-buttons {margin-left:10px;} 
+.lang-buttons button {margin:0 2px; padding:5px 10px; cursor:pointer; border:none; border-radius:2px; color: white;background-color: #333;}
+
+/* HERO SECTION */
+#hero {
+  position: relative;
+  text-align: center; 
+  padding: 150px 20px 50px 20px; 
+  height: 100vh; /* full screen height */
+  overflow: hidden;
+}
+
+/* Background image with minor blur */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url(hogtech\ cover\ page.jpg) center/cover no-repeat;
+  filter: blur(4px);       /* minor blur */
+  transform: scale(1.1);   /* avoid blur edges showing */
+  z-index: 0;
+}
+
+/* Optional dark overlay for contrast */
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25); /* slightly dark overlay */
+  z-index: 1;
+}
+
+/* Hero text on top of background */
+#hero-title {
+  position: relative;
+  z-index: 2;
+  font-size: 50px; 
+  font-family: 'Times New Roman', serif; 
+  margin-bottom: 10px; 
+  color: black;
+}
+
+#hero-subtitle {
+  position: relative;
+  z-index: 2;
+  font-size: 24px; 
+  font-style: italic; 
+  color: black;
+  display: block; /* ensures it stays below the title */
+  margin-bottom: 20px;
+}
+
+#hero-btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px; 
+  padding: 12px 25px; 
+  background: #ffb703; 
+  border: none; 
+  border-radius: 6px; 
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#hero-btn:hover {
+  background: #e0a800;
+}
+
+
+
+/* === SERVICES SECTION === */
+.service-item {
+  background: skyblue; /* card background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  text-align: center; /* keeps text/buttons centered */
+}
+
+/* Hover effect (lift card) */
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Service text */
+.service-item h3 {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  color: black;
+  margin-bottom: 15px;
+}
+
+/* Service buttons */
+.service-item button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.service-item button:hover {
+  background-color: darkgreen;
+}
+
+/* Responsive grid for services */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+/* SECTION HEADERS */
+section h2 {
+  display:inline-block;
+  text-align:center;
+  margin:40px auto 20px auto;
+  font-weight:bold;
+  font-size:28px;
+  color:white;
+  background-color:#023e8a;
+  padding:10px 20px;
+  border-radius:8px;
+  width:auto;
+}
+
+/* ABOUT US */
+#about {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:20px;
+  padding:60px 20px;
+  background:#caf0f8;
+}
+#about-text { flex:1 1 400px; font-size:16px; line-height:1.6; }
+#about-img { flex:1 1 300px; }
+#about-img img { width:100%; border-radius:10px; }
+
+/* SERVICES */
+#services { padding:60px 20px; background-image: url(background2.png); }
+.service-item { display:flex; flex-wrap:wrap; gap:20px; margin-bottom:30px; background:white; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.service-item img { width:200px; border-radius:8px; }
+.service-item-content { flex:1; padding:10px; }
+.service-description { display:none; margin-top:10px; font-size:14px; line-height:1.5; color:#023e8a; }
+
+/* GALLERY */
+.swiper {width:100%; height:300px; margin:30px 0;}
+.swiper-slide img {width:100%; height:100%; object-fit:cover; border-radius:8px;}
+#gallery { padding:60px 20px; background-image: url(background2.png); }
+
+/* PRICING TABLE */
+.price-table {width:100%; border-collapse: collapse; margin-bottom:50px;}
+.price-table th, .price-table td {border:1px solid black; padding:10px; text-align:left;}
+.price-table th {background:greenyellow;}
+#pricing { padding:60px 20px; background-image: url(background2.png); }
+
+/* QUOTE FORM */
+#quote-form input, #quote-form textarea { width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc; }
+#quote-form button { padding:10px 20px; background:#ffb703; border:none; cursor:pointer; border-radius:5px; }
+#success-msg {display:none;color:green;font-weight:bold;text-align:center;margin-top:10px;}
+
+/* FAQ */
+.faq-item button { width:100%; text-align:left; padding:10px; border:none; background:#023e8a; color:white; border-radius:5px; margin-bottom:5px; cursor:pointer; }
+.faq-item p { display:none; padding:10px; background:#caf0f8; border-radius:5px; margin-bottom:10px; }
+#faq { padding:60px 20px; background-image: url(background2.png); }
+
+/* CONTACT */
+#contact { background:black; color:white; padding:60px 20px; text-align:center; }
+#contact-title { font-size:32px; font-weight:bold; margin-bottom:20px; }
+
+/* FOOTER */
+footer { background:#023e8a; color:white; text-align:center; padding:15px; margin-top:30px; }
+
+/* RESPONSIVE */
+@media screen and (max-width:768px){
+  #about {flex-direction: column;}
+  .service-item {flex-direction: column; align-items: center;}
+  .service-item img {width: 100%;}
+
+  /* Show hamburger button */
+  #mobile-menu-btn {
+    display: block;
+  }
+
+  /* Hide nav menu by default on mobile */
+  nav {
+    position: absolute;
+    top: 60px; /* below header */
+    left: 0;
+    width: 100%;
+    background: blue;
+    display: none; /* hidden by default */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li {
+    width: 90%;
+    border-radius: 5px;
+  }
+
+  /* Show nav when toggled */
+  nav.show {
+    display: flex;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div id="logo"><img src="hogtech logo.jpg" alt="HOG TECH Logo"></div>
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="lang-buttons">
+    <button class="lang" onclick="changeLang('EN')">EN</button>
+    <button class="lang" onclick="changeLang('FR')">FR</button>
+  </div>
+</header>
+
+<main>
+<section id="hero">
+  <h1 id="hero-title">Welcome to HOG TECH Printing</h1>
+  <p id="hero-subtitle">Where we print beyond impression</p>
+  <button id="hero-btn">Get a Quote</button>
+</section>
+
+<section id="about">
+<h2 id="about-title">About Us</h2>
+<div id="about-img"><img src="homepage.jpg" alt="Printing company image"></div>
+<div id="about-text">
+We are a professional printing company based in Douala, Cameroon, delivering high-quality printing services for businesses and individuals. From flyers, banners, business cards, and posters to T-shirts, mugs, and custom branding, we provide expert design and production to ensure your materials stand out and leave a lasting impression.
+</div>
+</section>
+
+<section id="services">
+<h2 id="services-title">Our Services</h2>
+
+<div class="service-item">
+  <img src="business card.jpg" alt="Business Cards">
+  <div class="service-item-content">
+    <h3>Business Cards</h3>
+    <p class="service-description">High-quality business cards using premium paper and vivid printing to make a lasting impression.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="flyer.jpg" alt="Flyers">
+  <div class="service-item-content">
+    <h3>Flyers & Leaflets</h3>
+    <p class="service-description">Flyers are printed using offset or digital printing for vibrant colors and sharp graphics, ideal for marketing and promotions.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="posters.jpg" alt="Posters">
+  <div class="service-item-content">
+    <h3>Posters</h3>
+    <p class="service-description">Custom posters for events, advertisements, and promotions, printed with high-resolution graphics for maximum impact.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+
+</div>
+ <div class="service-item"> 
+  <img src="bronchure.jpg" alt="Brochures">
+  <div class="service-item-content">
+    <h3>Brochures & Catalogues</h3>
+    <p class="service-description">Professionally designed brochures and catalogues to showcase products and services effectively with premium finishes.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+   </div>
+ </div>
+ 
+ <div class="service-item">
+  <img src="books and reports.jpg" alt="Books & Reports">
+  <div class="service-item-content">
+    <h3>Books & Reports</h3>
+    <p class="service-description">Binding and printing of books, reports, and manuals with professional layouts and durable finishes.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+  <div class="service-item">
+   <img src="custom printing.jpg" alt="Custom Printing">
+   <div class="service-item-content">
+    <h3>Custom Printing</h3>
+    <p class="service-description">Tailored printing solutions for banners, merchandise, labels, and other creative projects with high-quality finishes.</p>
+   <button onclick="toggleService(this)">Learn More</button>
+   </div>
+</div>
+
+ <div class="service-item">
+  <img src="stickers and labels.jpg" alt="Stickers & Labels">
+  <div class="service-item-content">
+    <h3>Stickers & Labels</h3>
+    <p class="service-description">Custom stickers and labels in various shapes and finishes for branding, packaging, and promotions.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="packaging.jpg" alt="Packaging">
+  <div class="service-item-content">
+    <h3>Packaging</h3>
+    <p class="service-description">Creative packaging solutions for products, from boxes to custom wraps, printed with high-quality graphics.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="banners.jpg" alt="Banners">
+  <div class="service-item-content">
+    <h3>Banners & Signage</h3>
+    <p class="service-description">Durable and vibrant banners for events, promotions, or advertising, suitable for indoor and outdoor use.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="invitation card.jpg" alt="Invitations">
+  <div class="service-item-content">
+    <h3>Invitations & Cards</h3>
+    <p class="service-description">Personalized invitations, greeting cards, and event stationery printed with elegant designs and finishes.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="calenders.jpg" alt="Calendars">
+  <div class="service-item-content">
+    <h3>Calendars</h3>
+    <p class="service-description">Custom calendars for corporate gifts, personal use, or promotions, printed with high-quality images and designs.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+<div class="service-item">
+  <img src="tshirt.jpg" alt="T-Shirts & Merchandise">
+  <div class="service-item-content">
+    <h3>T-Shirts & Merchandise</h3>
+    <p class="service-description">Printed apparel and merchandise for marketing, events, or retail, using durable inks and materials.</p>
+    <button onclick="toggleService(this)">Learn More</button>
+  </div>
+</div>
+
+
+</section>
+
+<section id="gallery">
+<h2 id="gallery-title">Gallery</h2>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="h1.jpg" alt="Flyers"></div>
+    <div class="swiper-slide"><img src="h2.jpg" alt="Business Cards"></div>
+    <div class="swiper-slide"><img src="h3.jpg" alt="Banners"></div>
+    <div class="swiper-slide"><img src="h4.jpg" alt="Flyers"></div>
+    <div class="swiper-slide"><img src="h5.jpg" alt="Business Cards"></div>
+    <div class="swiper-slide"><img src="h6.jpg" alt="Banners"></div>
+    <div class="swiper-slide"><img src="h8.jpg" alt="Business Cards"></div>
+    <div class="swiper-slide"><img src="hogtech cover page.jpg" alt="Banners"></div>
+  </div>
+</div>
+</section>
+
+<section id="pricing">
+<h2 id="pricing-title">Pricing</h2>
+<table class="price-table">
+<tr><th id="price-header-service">Service</th><th id="price-header-price">Price</th></tr>
+<tr><td>Business Cards</td><td>5000XFA for 50pcs</td></tr>
+<tr><td>Flyers</td><td>1000XFA for 10pcs</td></tr>
+<tr><td>Banners</td><td>3000XFA/sq.m</td></tr>
+</table>
+</section>
+
+<section id="quote">
+<h2 id="quote-title">Get a Quote</h2>
+<p id="quote-text">Fill in the form below and we’ll get back with a price.</p>
+<form id="quote-form">
+<input type="text" name="from_name" placeholder="Your Name" required>
+<input type="email" name="from_email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Details of your request" rows="4"></textarea>
+<button type="submit">Submit</button>
+<p id="success-msg">Message sent successfully!</p>
+</form>
+</section>
+
+<section id="faq">
+<h2 id="faq-title">Frequently Asked Questions</h2>
+<div class="faq-item">
+<button id="faq-q1" onclick="toggleFAQ(this)">What printing services do you offer?</button>
+<p id="faq-a1">We offer flyers, banners, business cards, t-shirts, posters, and more.</p>
+</div>
+<div class="faq-item">
+<button id="faq-q2" onclick="toggleFAQ(this)">How long does printing usually take?</button>
+<p id="faq-a2">Typically 2-5 business days depending on the order size.</p>
+</div>
+<div class="faq-item">
+<button id="faq-q3" onclick="toggleFAQ(this)">Do you deliver?</button>
+<p id="faq-a3">Yes, we deliver locally and nationally.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2 id="contact-title">Contact Us</h2>
+<p><strong>📍 Address:</strong> Douala, Cameroon</p>
+<p><strong>📞 Phone:</strong> +237 675366777 / 670797914</p>
+<p><strong>✉ Email:</strong> hogtechprints@gmail.com</p>
+<p><strong>🕒 Working Hours:</strong> Monday - Sunday | 8:00 AM - 8:00 PM</p>
+</section>
+
+<footer>
+<p>&copy; 2025 HOG TECH Printing. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+emailjs.init("8bBU9muyjZaE159N3");
+
+function toggleFAQ(btn){ const p = btn.nextElementSibling; p.style.display = p.style.display==="block"?"none":"block"; }
+function toggleService(btn){ const desc = btn.previousElementSibling; desc.style.display = desc.style.display==="block"?"none":"block"; }
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView:3,
+  spaceBetween:15,
+  loop:true,
+  autoplay:{delay:2000, disableOnInteraction:false},
+  breakpoints:{320:{slidesPerView:1}, 640:{slidesPerView:2}, 1024:{slidesPerView:3}}
+});
+
+const texts = { 
+  EN: {
+    nav: ["Home","About","Services","Gallery","Pricing","FAQ","Contact"],
+    hero: ["Welcome to HOG TECH Printing","Where we print beyond impression"],
+    button: "Get a Quote",
+    about: [
+      "About Us",
+      "We are a professional printing company based in Douala, Cameroon, delivering high-quality printing services for businesses and individuals. From flyers, banners, business cards, and posters to T-shirts, mugs, and custom branding, we provide expert design and production to ensure your materials stand out and leave a lasting impression."
+    ],
+    servicesTitle: "Our Services",
+    services: [
+      "Business Cards","Flyers & Leaflets","Posters","Brochures & Catalogues",
+      "Books & Reports","Custom Printing","Stickers & Labels","Packaging",
+      "Banners & Signage","Invitations & Cards","Calendars","T-Shirts & Merchandise"
+    ],
+
+    servicesDesc: [
+      "High-quality business cards using premium paper and vivid printing to make a lasting impression.",
+      "Flyers are printed using offset or digital printing for vibrant colors and sharp graphics, ideal for marketing and promotions.",
+      "Custom posters for events, advertisements, and promotions, printed with high-resolution graphics for maximum impact.",
+      "Professionally designed brochures and catalogues to showcase products and services effectively with premium finishes.",
+      "Binding and printing of books, reports, and manuals with professional layouts and durable finishes.",
+      "Tailored printing solutions for banners, merchandise, labels, and other creative projects with high-quality finishes.",
+      "Custom stickers and labels in various shapes and finishes for branding, packaging, and promotions.",
+      "Creative packaging solutions for products, from boxes to custom wraps, printed with high-quality graphics.",
+      "Durable and vibrant banners for events, promotions, or advertising, suitable for indoor and outdoor use.",
+      "Personalized invitations, greeting cards, and event stationery printed with elegant designs and finishes.",
+      "Custom calendars for corporate gifts, personal use, or promotions, printed with high-quality images and designs.",
+      "Printed apparel and merchandise for marketing, events, or retail, using durable inks and materials."
+    ],
+    gallery: ["Gallery"],
+    pricing: ["Pricing"],
+    quote: ["Get a Quote","Fill in the form below and we’ll get back with a price."],
+    faq: ["Frequently Asked Questions"],
+    faqQ: [
+      "What printing services do you offer?",
+      "How long does printing usually take?",
+      "Do you deliver?"
+    ],
+    faqA: [
+      "We offer flyers, banners, business cards, t-shirts, posters, and more.",
+      "Typically 2-5 business days depending on the order size.",
+      "Yes, we deliver locally and nationally."
+    ],
+    contact: ["Contact Us"]
+  },
+  FR: {
+    nav: ["Accueil","À propos","Services","Galerie","Tarifs","FAQ","Contact"],
+    hero: ["Bienvenue chez HOG TECH Printing","Nous imprimons au-delà de l'impression"],
+    button: "Demander un devis",
+    about: [
+      "À propos de nous",
+      "Nous sommes une entreprise professionnelle d'impression basée à Douala, Cameroun, offrant des services d'impression de haute qualité pour les entreprises et les particuliers. Flyers, bannières, cartes de visite, affiches, t-shirts, mugs et personnalisation sur mesure."
+    ],
+    servicesTitle: "Nos Services",
+services: [
+  "Cartes de visite","Flyers & Prospectus","Affiches","Brochures & Catalogues",
+  "Livres & Rapports","Impression personnalisée","Autocollants & Étiquettes","Emballage",
+  "Bannières & Enseignes","Invitations & Cartes","Calendriers","T-shirts & Produits dérivés"
+],
+servicesDesc: [
+  "Cartes professionnelles imprimées en haute qualité pour une image élégante.",
+  "Flyers et prospectus en couleurs vives pour vos promotions.",
+  "Affiches grand format pour vos campagnes publicitaires.",
+  "Brochures et catalogues pour présenter vos produits et services.",
+  "Livres et rapports reliés avec soin.",
+  "Impression personnalisée pour vos besoins uniques.",
+  "Autocollants et étiquettes pour branding et packaging.",
+  "Solutions d’emballage imprimées sur mesure.",
+  "Bannières et enseignes durables pour événements et vitrines.",
+  "Invitations et cartes créatives pour toutes occasions.",
+  "Calendriers personnalisés pour particuliers et entreprises.",
+  "T-shirts et produits dérivés avec impression durable."
+],
+    
+    gallery: ["Galerie"],
+     pricing: ["Tarifs","Service","Prix",[["Cartes de visite","5000XFA pour 50pcs"],["Flyers","1000XFA pour 10pcs"],["Banniers","3000XFA/sqm"]]],
+    quote: ["Demander un devis","Remplissez le formulaire ci-dessous et nous vous répondrons avec un prix.","Votre nom","Votre email","Parlez-nous de votre projet","Envoyer"],
+    faq: ["Questions fréquentes"],
+    faqQ: [
+      "Quels services d'impression proposez-vous ?",
+      "Combien de temps dure généralement l'impression ?",
+      "Faites-vous la livraison ?"
+    ],
+    faqA: [
+      "Nous proposons flyers, bannières, cartes de visite, t-shirts, affiches et plus.",
+      "En général 2 à 5 jours ouvrables selon la taille de la commande.",
+      "Oui, nous livrons localement et à l'échelle nationale."
+    ],
+    contact: ["Contactez-nous"]
+  }
+};
+
+function changeLang(lang){
+  document.querySelectorAll("nav ul li a").forEach((a,i)=>a.textContent=texts[lang].nav[i]);
+  document.getElementById("hero-title").textContent=texts[lang].hero[0];
+  document.getElementById("hero-subtitle").textContent=texts[lang].hero[1];
+  document.getElementById("hero-btn").textContent=texts[lang].button;
+  document.getElementById("about-title").textContent=texts[lang].about[0];
+  document.getElementById("about-text").textContent=texts[lang].about[1];
+  document.getElementById("services-title").textContent=texts[lang].servicesTitle;
+  document.querySelectorAll("#services h3").forEach((h3,i)=>h3.textContent=texts[lang].services[i]);
+  document.querySelectorAll(".service-description").forEach((p,i)=>p.textContent=texts[lang].servicesDesc[i]);
+  document.getElementById("gallery-title").textContent=texts[lang].gallery[0];
+  document.getElementById("pricing-title").textContent=texts[lang].pricing[0];
+  document.getElementById("price-header-service").textContent=lang==="EN"?"Service":"Service";
+  document.getElementById("price-header-price").textContent=lang==="EN"?"Price":"Prix";
+  document.getElementById("quote-title").textContent=texts[lang].quote[0];
+  document.getElementById("quote-text").textContent=texts[lang].quote[1];
+  document.getElementById("faq-title").textContent=texts[lang].faq[0];
+  document.getElementById("faq-q1").textContent=texts[lang].faqQ[0];
+  document.getElementById("faq-q2").textContent=texts[lang].faqQ[1];
+  document.getElementById("faq-q3").textContent=texts[lang].faqQ[2];
+  document.getElementById("faq-a1").textContent=texts[lang].faqA[0];
+  document.getElementById("faq-a2").textContent=texts[lang].faqA[1];
+  document.getElementById("faq-a3").textContent=texts[lang].faqA[2];
+  document.getElementById("contact-title").textContent=texts[lang].contact[0];
+}
+
+document.getElementById("hero-btn").addEventListener("click",()=>{ document.getElementById("quote").scrollIntoView({behavior:"smooth"}); });
+
+document.getElementById("quote-form").addEventListener("submit",function(e){
+  e.preventDefault();
+  emailjs.sendForm("service_4g2r4il","template_10hc8w2",this).then(function(){
+    document.getElementById("success-msg").style.display="block";
+  },function(error){alert("Error: "+error.text);});
+});
+</script>
+</body>
+</html>
